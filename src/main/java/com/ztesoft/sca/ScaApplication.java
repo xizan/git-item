@@ -18,6 +18,6 @@ public class ScaApplication  extends SpringBootServletInitializer {
 	
 	public static void main(String[] args) { 
 		SpringApplication.run(ScaApplication.class, args);
-		logger.info("-----ScaApplication------aa--");
+		logger.info("-----ScaApplication-------");
 	}
 }
