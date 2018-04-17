@@ -17,9 +17,7 @@ public class ScaApplication  extends SpringBootServletInitializer {
 	}
 	
 	public static void main(String[] args) {
-		 String test="SHA34cccddee";
-		logger.info(test.toLowerCase());
 		SpringApplication.run(ScaApplication.class, args);
-		logger.info("-----ScaApplication-----test---");
+		logger.info("-----ScaApplication--------");
 	}
 }
