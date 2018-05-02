@@ -52,7 +52,59 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 		</dependency>
+		
+		<!-- zxz -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.json-lib</groupId>
+            <artifactId>json-lib</artifactId>
+            <version>2.4</version>
+            <classifier>jdk15</classifier>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.oracle/ojdbc14 -->
+        <dependency> 
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc14</artifactId>
+            <version>10.2.0.4.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-core-lgpl -->
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-core-lgpl</artifactId>
+            <version>1.9.13</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-mapper-lgpl -->
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-lgpl</artifactId>
+            <version>1.9.13</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jdbc -->
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jdbc</artifactId>
+            <version>7.0.82</version>
+        </dependency>
 
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.4.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpcore</artifactId>
+            <version>4.4.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.2</version>
+        </dependency>
+        
 
 		<dependency>
 			<groupId>com.aliyun</groupId>
@@ -107,6 +159,60 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+           <!-- java编译插件 -->
+			<plugin>  
+			    <artifactId>maven-compiler-plugin</artifactId>  
+			    <configuration>  
+			        <source>1.8</source>  
+			        <target>1.8</target>  
+			        <encoding>UTF-8</encoding>  
+			        <failOnError>false</failOnError>  
+			    </configuration>  
+			</plugin>  
+			  
+			<plugin>  
+			    <artifactId>maven-jar-plugin</artifactId>  
+			    <configuration>  
+			        <archive>  
+			            <addMavenDescriptor>false</addMavenDescriptor>  
+			        </archive>  
+			    </configuration>  
+			</plugin>  
+			  
+			<plugin>  
+			    <groupId>org.apache.maven.plugins</groupId>  
+			    <artifactId>maven-source-plugin</artifactId>  
+			    <executions>  
+			        <execution>  
+			            <id>attach-sources</id>  
+			            <phase>verify</phase>  
+			            <goals>  
+			                <goal>jar</goal>  
+			            </goals>  
+			        </execution>  
+			    </executions>  
+			</plugin>  
+			  
+			<plugin>  
+			    <artifactId>maven-assembly-plugin</artifactId>  
+			    <version>2.2-beta-1</version>  
+			    <configuration>  
+			        <descriptors>  
+			            <descriptor>assembly.xml</descriptor>  
+			        </descriptors>  
+			        <appendAssemblyId>false</appendAssemblyId>  
+			    </configuration>  
+			  
+			    <executions>  
+			        <execution>  
+			            <id>make-assembly</id>  
+			            <phase>package</phase>  
+			            <goals>  
+			                <goal>single</goal>  
+			            </goals>  
+			        </execution>  
+			    </executions>  
+			</plugin>  
 		</plugins>
 	</build>
 
